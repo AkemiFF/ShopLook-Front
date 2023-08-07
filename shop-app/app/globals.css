@@ -69,6 +69,52 @@ body {
   margin-top: 9em;
 }
 
+.input-width{
+  width: auto;
+  margin-left: 4.5em;
+  margin-right: 4.5em;
+}
+.input-width input{
+  width: 16em;
+}
+.input-width input:focus{
+  border: none;
+  outline: none;
+}
+.button-width{
+  width: 15em;
+  height: 3em;
+  padding: 3px;
+  background: var(--color-style);
+  color: #ffffff;
+  transition: 0.1s;
+}
+.button-width:hover{
+  background: var(--color-style2);
+}
+.input-check{
+  margin-left: -1em;
+}
+.button-close{
+  width: 7em;
+  height: 3em;
+  padding: 3px;
+  background: var(--color-secondary);
+  color: var(--color-style);
+  transition: 0.1s;
+}
+.button-confirm{
+  width: 9em;
+  height: 3em;
+  padding: 3px;
+  background: var(--color-style);
+  color: #ffffff;
+  transition: 0.1s;
+}
+.span-margin{
+  margin-left: 5.6em;
+  margin-top: 1em;
+}
 /* Accueil */
 .Accueil{
   margin-top: 4.5em;

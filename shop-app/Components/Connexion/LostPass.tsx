@@ -1,20 +1,17 @@
 import { FC } from "react";
 import Link from "next/link";
 
-interface LoginProps {
+interface LostPassProps {
     
 }
  
-const Login: FC<LoginProps> = ({}) => {
+const LostPass: FC<LostPassProps> = ({}) => {
     return <div>
          <div>
-    <main className="Login-main d-flex flex-row-reverse justify-content-between bg-light me-3 ms-3">
-      <section id="image-mobile">
-        image
-      </section>
+    <main className="Login-main d-flex justify-content-center bg-light me-3 ms-3">
       <section className="text-center bg-light">
-        <p className="fs-3 fw-semibold">Ravis de vous revoir</p>
-        <p>Connecter votre compte</p>
+        <p className="fs-3 fw-semibold">Mot de passe oublier</p>
+        <p>Entrez votre email</p>
         <form action="">
           <article className="form-login d-flex flex-col gap-2">
             <label className="input-width rounded-1 p-1 bg-body-secondary">
@@ -23,9 +20,7 @@ const Login: FC<LoginProps> = ({}) => {
             <label className="input-width rounded-1 p-1 bg-body-secondary">
               <i className="bi-lock-fill fs-5 rounded-5"></i>
               <input type="password"  placeholder="Mot de passe" className="p-2 bg-body-secondary"/></label>
-            <span><Link href="/LostPass"><p>Mot de passe oublier?</p></Link></span>
-            <span><input type="submit" value="Se connecter" className="button-width rounded-1 ps-2 pe-2 fw-semibold"/></span>
-            <span><p>Pour s&apos;inscrire?<Link href="/Inscription"><span>Cliquez ici.</span></Link></p></span>
+            <span className="span-margin d-flex flex-row gap-3"><Link href="/Login"><input type="submit" value="Annuler" className="button-close rounded-1 ps-2 pe-2 fw-semibold"/></Link><input type="submit" value="Confirmer" className="button-confirm rounded-1 ps-2 pe-2 fw-semibold"/></span>
           </article>
         </form>
       </section>
@@ -34,4 +29,4 @@ const Login: FC<LoginProps> = ({}) => {
     </div>
 }
  
-export default Login;
+export default LostPass;
