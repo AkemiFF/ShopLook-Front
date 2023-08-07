@@ -2,8 +2,5 @@
 __pycache__
 venv
 .vscode
-api/E_commerce/__pycache__
-api/shop/__pycache__
-
-api/shop/__pycache__/
-api/E_commerce/__pycache__/
+node_modules
+.next
