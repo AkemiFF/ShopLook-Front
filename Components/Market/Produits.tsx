@@ -3,10 +3,14 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 interface Product {
+    id: number;
     product_name: string;
+    reference: string;
     price: number;
+    stock: number;
     description: string;
     image: string;
+    category: number;
 }
 
 function Produits() {
@@ -16,7 +20,8 @@ function Produits() {
         const fetchData = async () => {
             try {
                 const response = await axios.get('http://localhost:8000/api/products/');
-                setProducts(response.data.products);
+                setProducts(response.data);
+                console.log(response.data)
             } catch (error) {
                 console.error(error);
             }
@@ -27,21 +32,23 @@ function Produits() {
 
     return (
         <div>
-            {products.map((product, index) => (
-                <figure className="w-25 bg-light shadow-sm p-3 text-center">
-                    <picture className="d-flex justify-center gap-5">
-                        <p className="bg-primary text-light pe-3 ps-3">{product.product_name}</p>
-                        <i className="bi-heart"></i>
-                    </picture>
-                    <picture className="bg-body-secondary">
-                        <p className="fw-semibold">Image</p>
-                    </picture>
-                    <figcaption>
-                        <p>Produit <br /> <strong>Prix 0.00$</strong></p>
-                    </figcaption>
-                </figure>
-            ))}
-
+            {products && products.length > 0 ? (
+                products.map((product, index) => (
+                    <figure key={index} className="w-25 bg-light shadow-sm p-3 text-center">
+                        <picture className="d-flex justify-center gap-5">
+                            <i className="bi-heart"></i>
+                        </picture>
+                        <picture className="bg-body-secondary">
+                            <p className="fw-semibold">{product.product_name}</p>
+                        </picture>
+                        <figcaption>
+                            <p>{product.description}<br /> <strong>Prix {product.price}$</strong></p>
+                        </figcaption>
+                    </figure>
+                ))
+            ) : (
+                <p>Aucun produit disponible.</p>
+            )}
         </div>
     );
 }
