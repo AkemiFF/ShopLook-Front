@@ -4,15 +4,15 @@ import Aside from "../../Components/Market/Aside/Aside";
 import Produits from "../../Components/Market/Produits";
 
 interface pageProps {
-    
+
 }
- 
-const page: FC<pageProps> = ({}) => {
+
+const page: FC<pageProps> = ({ }) => {
     return <div>
         <Navbar />
         <Aside />
         <Produits />
     </div>
 }
- 
+
 export default page;
