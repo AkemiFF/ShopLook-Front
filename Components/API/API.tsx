@@ -9,3 +9,12 @@ export async function fetchAllData() {
         return [];
     }
 }
+export async function fetchCategory() {
+    try {
+        const response = await axios.get('http://localhost:8000/api/category');
+        return response.data;
+    } catch (error) {
+        console.error(error);
+        return [];
+    }
+}
