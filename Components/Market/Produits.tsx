@@ -1,6 +1,7 @@
 'use client'
-import axios from 'axios';
 import { useEffect, useState } from 'react';
+import axios from 'axios';
+
 
 interface Product {
     id: number;
@@ -21,7 +22,6 @@ function Produits() {
             try {
                 const response = await axios.get('http://localhost:8000/api/products/');
                 setProducts(response.data);
-                console.log(response.data)
             } catch (error) {
                 console.error(error);
             }
