@@ -18,3 +18,13 @@ export async function fetchCategory() {
         return [];
     }
 }
+
+export async function fetchProduct() {
+    try {
+        const response = await axios.get('http://localhost:8000/api/products');
+        return response.data;
+    } catch (error) {
+        console.error(error);
+        return [];
+    }
+}
