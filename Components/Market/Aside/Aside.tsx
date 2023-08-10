@@ -33,7 +33,7 @@ const Produits: FC<ProduitsProps> = ({ }) => {
                     category.map((category, index) => (
                         <article>
                             {/* <button name={category.category_name} onClick={Trier(category.category_name)}><p>{category.category_name}</p></button> */}
-                            <button name={category.category_name}><p>{category.category_name}</p></button>
+                            <Link href={`/Category?cat=${category.category_name}`}><p>{category.category_name}</p></Link>
                         </article>
                     ))) : (
                     <article>
