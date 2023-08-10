@@ -1,8 +1,12 @@
 import axios from 'axios';
 
+// const HOST = "http://localhost:8000/"
+const HOST = "https://akemiff.pythonanywhere.com/"
+
+
 export async function fetchAllData() {
     try {
-        const response = await axios.get('http://localhost:8000/api/');
+        const response = await axios.get(`${HOST}api/`);
         return response.data;
     } catch (error) {
         console.error(error);
@@ -12,7 +16,7 @@ export async function fetchAllData() {
 
 export async function fetchCategory() {
     try {
-        const response = await axios.get('http://localhost:8000/api/category');
+        const response = await axios.get(`${HOST}api/category`);
         return response.data;
     } catch (error) {
         console.error(error);
@@ -22,7 +26,7 @@ export async function fetchCategory() {
 
 export async function fetchProduct() {
     try {
-        const response = await axios.get('http://localhost:8000/api/products');
+        const response = await axios.get(`${HOST}api/products`);
         return response.data;
     } catch (error) {
         console.error(error);
@@ -32,7 +36,7 @@ export async function fetchProduct() {
 
 export async function fetchCart() {
     try {
-        const response = await axios.get('http://localhost:8000/api/cart');
+        const response = await axios.get(`${HOST}api/cart`);
         return response.data;
     } catch (error) {
         console.error(error);
@@ -42,7 +46,7 @@ export async function fetchCart() {
 
 export async function fetchOrder() {
     try {
-        const response = await axios.get('http://localhost:8000/api/order');
+        const response = await axios.get(`${HOST}api/order`);
         return response.data;
     } catch (error) {
         console.error(error);
@@ -52,7 +56,7 @@ export async function fetchOrder() {
 
 export async function fetchOrderDetail() {
     try {
-        const response = await axios.get('http://localhost:8000/api/orderdetail');
+        const response = await axios.get(`${HOST}api/orderdetail`);
         return response.data;
     } catch (error) {
         console.error(error);
@@ -62,7 +66,7 @@ export async function fetchOrderDetail() {
 
 export async function fetchInvoiceDetail() {
     try {
-        const response = await axios.get('http://localhost:8000/api/invoicedetail');
+        const response = await axios.get(`${HOST}api/invoicedetail`);
         return response.data;
     } catch (error) {
         console.error(error);
@@ -72,7 +76,7 @@ export async function fetchInvoiceDetail() {
 
 export async function fetchInvoice() {
     try {
-        const response = await axios.get('http://localhost:8000/api/invoice');
+        const response = await axios.get(`${HOST}api/invoice`);
         return response.data;
     } catch (error) {
         console.error(error);
