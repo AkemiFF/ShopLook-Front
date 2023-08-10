@@ -14,6 +14,7 @@ interface Product {
     category: number;
 }
 
+
 function Produits() {
     const [products, setProducts] = useState<Product[]>([]);
 
