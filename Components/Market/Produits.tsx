@@ -2,6 +2,13 @@
 import { useEffect, useState } from 'react';
 import { fetchProduct } from '../API/API';
 import Link from "next/link";
+import { useRouter } from 'next/router';
+
+
+
+interface BijouxProps {
+
+}
 
 
 
@@ -31,28 +38,34 @@ function Produits() {
 
     return (
         <div>
-            {products && products.length > 0 ? (
-                products.map((product, index) => (
-                    <figure key={index} className="w-25 bg-light shadow-sm p-3 text-center">
-                        <picture className="d-flex justify-center gap-5">
-                            <i className="bi-heart"></i>
-                        </picture>
-                        <picture className="bg-body-secondary">
-                            <p className="fw-semibold">{product.product_name}</p>
-                            <img src={product.image} alt={'image' + ' ' + product.product_name} />
+            <main>
+                <div className="produit-accueil me-3 p-lg-3 bg-light">
+                    {products && products.length > 0 ? (
+                        products.map((product, index) => (
+                            <figure key={index} className="w-25 bg-light shadow-sm p-3 text-center">
+                                <picture className="d-flex justify-center gap-5">
+                                    <i className="bi-heart"></i>
+                                </picture>
+                                <picture className="bg-body-secondary">
+                                    <p className="fw-semibold">{product.product_name}</p>
+                                    <img src={product.image} alt={'image' + ' ' + product.product_name} />
 
-                        </picture>
-                        <figcaption>
-                            {/* mettre dans le détail du produit : {product.description}<br /> */}
-                            <p> <strong>Prix {product.price}$</strong></p>
-                            <Link href="/DetailProduit"><p>Voir le produits <i className="bi-arrow-right"></i></p></Link>
-                        </figcaption>
-                    </figure>
-                ))
-            ) : (
-                <p>Aucun produit disponible.</p>
-            )}
-        </div>
+                                </picture>
+                                <figcaption>
+                                    {/* mettre dans le détail du produit : {product.description}<br /> */}
+                                    <p> <strong>Prix {product.price}$</strong></p>
+                                    <Link href={`/DetailProduit?id=${product.id}`}>
+                                        <p>Voir le produits <i className="bi-arrow-right"></i></p>
+                                    </Link>
+                                </figcaption>
+                            </figure>
+                        ))
+                    ) : (
+                        <p>Aucun produit disponible.</p>
+                    )}
+                </div>
+            </main >
+        </div >
     );
 }
 

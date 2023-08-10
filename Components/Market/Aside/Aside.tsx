@@ -8,9 +8,11 @@ import { fetchCategory } from '../../API/API';
 interface ProduitsProps {
 
 }
+
 interface Category {
     category_name: string;
 }
+
 const Produits: FC<ProduitsProps> = ({ }) => {
     const [category, setCategory] = useState<Category[]>([]);
 
@@ -22,8 +24,6 @@ const Produits: FC<ProduitsProps> = ({ }) => {
 
         fetchData();
     }, []);
-
-
 
     return <div>
         <main>

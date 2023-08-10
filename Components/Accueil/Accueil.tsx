@@ -57,7 +57,9 @@ const Accueil: FC<AccueilProps> = ({ }) => {
                                 <figcaption>
                                     {/* mettre dans le détail du produit : {product.description}<br /> */}
                                     <p><strong>Prix {product.price}$</strong></p>
-                                    <Link href="/DetailProduit"><p>Voir le produits <i className="bi-arrow-right"></i></p></Link>
+                                    <Link href={`/DetailProduit?id=${product.id}`}>
+                                        <p>Voir le produits <i className="bi-arrow-right"></i></p>
+                                    </Link>
                                 </figcaption>
                             </figure>
                         ))
