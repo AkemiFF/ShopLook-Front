@@ -1,6 +1,6 @@
 'use client'
+import { fetchProduct } from '../API/API';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 import { FC } from "react";
 import Link from "next/link";
 
@@ -20,22 +20,17 @@ interface Product {
 }
 
 const Accueil: FC<AccueilProps> = ({ }) => {
-
     const [products, setProducts] = useState<Product[]>([]);
 
     useEffect(() => {
         const fetchData = async () => {
-            try {
-                const response = await axios.get('http://localhost:8000/api/products/');
-                setProducts(response.data);
-                console.log(response.data)
-            } catch (error) {
-                console.error(error);
-            }
+            const data = await fetchProduct();
+            setProducts(data);
         };
 
         fetchData();
     }, []);
+
 
     return <div>
         <main>
@@ -60,7 +55,9 @@ const Accueil: FC<AccueilProps> = ({ }) => {
                                     <img src={product.image} alt={'image' + ' ' + product.product_name} />
                                 </picture>
                                 <figcaption>
-                                    <p>{product.description}<br /> <strong>Prix {product.price}$</strong></p>
+                                    {/* mettre dans le détail du produit : {product.description}<br /> */}
+                                    <p><strong>Prix {product.price}$</strong></p>
+                                    <Link href="/DetailProduit"><p>Voir le produits <i className="bi-arrow-right"></i></p></Link>
                                 </figcaption>
                             </figure>
                         ))
