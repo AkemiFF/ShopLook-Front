@@ -1,18 +1,18 @@
 import { FC } from "react";
 import Navbar from "../Navbar/Navbar";
 import Aside from "../../Components/Market/Aside/Aside";
-import Art from "@/Components/Market/Art";
+import ProduitsTrie from "@/Components/Market/ProduitsTrie";
 
 interface pageProps {
-    
+
 }
- 
-const page: FC<pageProps> = ({}) => {
+
+const page: FC<pageProps> = ({ }) => {
     return <div>
         <Navbar />
         <Aside />
-        <Art />
+        <ProduitsTrie />
     </div>
 }
- 
+
 export default page;
