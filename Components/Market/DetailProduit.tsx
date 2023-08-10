@@ -17,9 +17,9 @@ interface Product {
 
 
 function Produits() {
+    const [products, setProducts] = useState<Product[]>([]);
     const urlParams = new URLSearchParams(window.location.search);
     const productId = Number(urlParams.get('id'));
-    const [products, setProducts] = useState<Product[]>([]);
     const [product, setProduct] = useState<Product | null>(null);
 
     useEffect(() => {
@@ -27,9 +27,7 @@ function Produits() {
             try {
                 const response = await fetchProduct();
                 setProducts(response);
-
                 const selectedProduct = products.find(product => product.id === productId);
-
                 setProduct(selectedProduct || null);
 
             } catch (error) {
