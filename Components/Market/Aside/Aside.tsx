@@ -39,7 +39,7 @@ const Produits: FC<ProduitsProps> = ({ }) => {
                         </article>
                     ))) : (
                     <article>
-                        <Link href="/"><p>Vide</p></Link>
+                        <Link href="/"><p>Aucune Catégorie Disponible</p></Link>
                     </article>
                 )}
 
