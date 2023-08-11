@@ -10,7 +10,9 @@ interface ProduitsProps {
 }
 
 interface Category {
+    id: number;
     category_name: string;
+
 }
 
 const Produits: FC<ProduitsProps> = ({ }) => {
@@ -31,13 +33,13 @@ const Produits: FC<ProduitsProps> = ({ }) => {
 
                 {category && category.length > 0 ? (
                     category.map((category, index) => (
-                        <article>
+                        <article key={category.id}>
                             {/* <button name={category.category_name} onClick={Trier(category.category_name)}><p>{category.category_name}</p></button> */}
-                            <Link href={`/Category?cat=${category.category_name}`}><p>{category.category_name}</p></Link>
+                            <Link href={`/Category?cat=${category.id}`}><p>{category.category_name}</p></Link>
                         </article>
                     ))) : (
                     <article>
-                        <Link href="/Vide"><p>Vide</p></Link>
+                        <Link href="/"><p>Vide</p></Link>
                     </article>
                 )}
 
