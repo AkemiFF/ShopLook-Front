@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// const HOST = "http://localhost:8000/"
-const HOST = "https://akemiff.pythonanywhere.com/"
+const HOST = "http://localhost:8000/"
+// const HOST = "https://akemiff.pythonanywhere.com/"
 
 
 export async function fetchAllData() {
@@ -27,6 +27,16 @@ export async function fetchCategory() {
 export async function fetchProduct() {
     try {
         const response = await axios.get(`${HOST}api/products`);
+        return response.data;
+    } catch (error) {
+        console.error(error);
+        return [];
+    }
+}
+
+export async function fetchProductCat(category: number) {
+    try {
+        const response = await axios.get(`http://127.0.0.1:8000/api/products/?category=${category}`);
         return response.data;
     } catch (error) {
         console.error(error);

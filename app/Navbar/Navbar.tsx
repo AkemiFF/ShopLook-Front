@@ -5,7 +5,7 @@ interface NavbarProps {
 }
 
 const Navbar: FC<NavbarProps> = ({ }) => {
-    const style ={
+    const style = {
 
     }
     return <div>
@@ -22,23 +22,23 @@ const Navbar: FC<NavbarProps> = ({ }) => {
                         <Link href="/About"><p>about</p></Link>
                     </article>
                     <article>
-                    <Link href="/Services"><p>Market</p></Link>
+                        <Link href="/Category"><p>Market</p></Link>
                     </article>
                     <article>
-                    <Link href="/Contact"><p>Contact</p></Link>
+                        <Link href="/Contact"><p>Contact</p></Link>
                     </article>
                 </nav>
                 <div>
                     <form action="">
                         <article className="bg-body-secondary p-lg-1 rounded-1 mt-1 input-search">
                             <span className="bi-search ps-1 text-dark">
-                                <input type="text" className="p-1 bg-body-secondary ps-2" placeholder="Recherche.."/>
+                                <input type="text" className="p-1 bg-body-secondary ps-2" placeholder="Recherche.." />
                             </span>
                         </article>
                     </form>
                 </div>
                 <div className="d-flex flex-row gap-3 mt-1 me-2">
-                <Link href="/Login"><button className="nav-login rounded-1 ps-3 pe-3">Se connecter</button></Link>
+                    <Link href="/Login"><button className="nav-login rounded-1 ps-3 pe-3">Se connecter</button></Link>
                     <div>
                         <article className="bg-body-secondary rounded-1 ps-2 pe-2 pt-1">
                             <span><p><i className="bi-cart3"></i>&nbsp;Panier <b>0</b></p></span>
