@@ -46,14 +46,19 @@ const Accueil: FC<AccueilProps> = ({ }) => {
                 <article className="d-flex flex-row flex-wrap gap-5 justify-content-center">
                     {products && products.length > 0 ? (
                         products.map((product, index) => (
-                            <figure key={index} className="w-25 bg-light shadow-sm p-3 text-center">
+                            <figure key={index} className="w-25 bg-light shadow-sm p-3 text-center article-element">
                                 <picture className="d-flex justify-center gap-5">
                                     <i className="bi-heart"></i>
                                 </picture>
                                 <picture className="bg-body-secondary">
                                     <p className="fw-semibold">{product.product_name}</p>
+
+                                </picture>
+                                {/* <div className='container-relative'> */}
+                                <picture className="img-container">
                                     <img src={product.image} alt={'image' + ' ' + product.product_name} />
                                 </picture>
+                                {/* </div> */}
                                 <figcaption>
                                     {/* mettre dans le détail du produit : {product.description}<br /> */}
                                     <p><strong>Prix {product.price}$</strong></p>

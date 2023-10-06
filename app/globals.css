@@ -6,96 +6,124 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  /* text-color */
   --color-primary: rgb(224, 224, 224);
   --color-secondary: rgb(238, 238, 238);
+  --color-secondary: rgb(20, 20, 20);
   --color-style: rgb(8, 143, 143);
-  --color-style2:rgb(9, 106, 106);
+  --text-color: #fff;
+  --color-style2: rgb(9, 106, 106);
 }
+
+
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --color-accent-primary: #212529;
+    --color-primary: #363636;
+    --color-secondary: rgb(76, 76, 76);
+    --color-style: #088f8f;
+    --color-style2: #096a6a;
+    --text-color: #fff;
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+
   }
 }
 
 body {
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;
-   background: var(--color-primary);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-primary);
 }
+
+main {
+  background-color: var(--color-primary);
+}
+
 /* Navbar */
-.Logo{
-  color:var(--color-style);
+.Logo {
+  color: var(--color-style);
 }
-.Navbar{
-   background: #ffffff;
+
+.Navbar {
+  background: var(--color-primary);
 }
-.Navbar input:focus{
+
+.Navbar input:focus {
   border: none;
   outline: none;
 }
-.input-search{
+
+.input-search {
   width: 18em;
-  border: 1px solid #ffffff;
-  color:var(--color-style);
+  border: 1px solid var(--color-accent-primary);
+  color: var(--color-style);
 }
-.nav-login{
-  background:var(--color-style);
-  color:#ffffff;
+
+.nav-login {
+  background: var(--color-style);
+  color: var(--text-color);
   padding: 8px;
   transition: 0.1s;
 }
-.nav-login:hover{
-  background:var(--color-style2);
+
+.nav-login:hover {
+  background: var(--color-style2);
 }
 
 /* login */
-.Login-main{
+.Login-main {
   margin-top: 4.5em;
   padding-top: 3em;
   padding-left: 4em;
   padding-right: 4em;
   height: 86.5vh;
 }
-.form-login{
+
+.form-login {
   width: 28em;
   height: 8em;
 }
-.icon-login{
+
+.icon-login {
   margin-top: 9em;
 }
 
-.input-width{
+.input-width {
   width: auto;
   margin-left: 4.5em;
   margin-right: 4.5em;
 }
-.input-width input{
+
+.input-width input {
   width: 16em;
 }
-.input-width input:focus{
+
+.input-width input:focus {
   border: none;
   outline: none;
 }
-.button-width{
+
+.button-width {
   width: 15em;
   height: 3em;
   padding: 3px;
   background: var(--color-style);
-  color: #ffffff;
+  color: var(--text-color);
   transition: 0.1s;
 }
-.button-width:hover{
+
+.button-width:hover {
   background: var(--color-style2);
 }
-.input-check{
+
+.input-check {
   margin-left: -1em;
 }
-.button-close{
+
+.button-close {
   width: 7em;
   height: 3em;
   padding: 3px;
@@ -103,37 +131,42 @@ body {
   color: var(--color-style);
   transition: 0.1s;
 }
-.button-confirm{
+
+.button-confirm {
   width: 9em;
   height: 3em;
   padding: 3px;
   background: var(--color-style);
-  color: #ffffff;
+  color: var(--text-color);
   transition: 0.1s;
 }
-.span-margin{
+
+.span-margin {
   margin-left: 5.6em;
   margin-top: 1em;
 }
+
 /* Accueil */
-.Accueil{
+.Accueil {
   margin-top: 4.5em;
 }
 
 /* Servies */
-.Aside{
+.Aside {
   margin-top: -1.5em;
   width: 18%;
-  height:  93vh;
+  height: 93vh;
   padding-left: 0em;
   padding-top: 2em;
   position: fixed;
 }
-.produit-accueil{
+
+.produit-accueil {
   margin-left: 16em;
   margin-top: 4em;
 }
-.Aside article p{
+
+.Aside article p {
   margin-left: 0.5em;
   margin-right: 0.5em;
   margin-top: 0em;
@@ -141,12 +174,41 @@ body {
   border-radius: 3px;
   transition: 0.2s;
 }
-.Aside article p:hover{
+
+.Aside article p:hover {
   background: var(--color-secondary);
   cursor: pointer;
 }
+
 /* contact */
-.para-formulaire{
+.para-formulaire {
   margin-left: 11em;
   margin-top: 5em;
+}
+
+
+/* Akemi Change */
+
+.article-element {
+  height: 32rem;
+  position: relative;
+}
+
+.article-element .img-container img {
+  position: relative;
+  height: 80%;
+  width: fit-content;
+  z-index: 1;
+}
+
+.article-element .img-container {
+  border: 2px solid var(--color-accent-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+  padding: 0;
+  height: 20rem;
+  z-index: 100;
 }

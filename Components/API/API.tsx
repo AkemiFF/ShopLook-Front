@@ -36,7 +36,7 @@ export async function fetchProduct() {
 
 export async function fetchProductCat(category: number) {
     try {
-        const response = await axios.get(`http://127.0.0.1:8000/api/products/?category=${category}`);
+        const response = await axios.get(`${HOST}api/products/?category=${category}`);
         return response.data;
     } catch (error) {
         console.error(error);

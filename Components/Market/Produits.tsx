@@ -39,7 +39,7 @@ function Produits() {
                 <div className="produit-accueil me-3 p-lg-3 bg-light">
                     {products && products.length > 0 ? (
                         products.map((product, index) => (
-                            <figure key={product.id} className="w-25 bg-light shadow-sm p-3 text-center">
+                            <figure key={product.id} className="w-25 bg-light shadow-sm p-3 text-center article-element">
                                 <picture className="d-flex justify-center gap-5">
                                     <i className="bi-heart"></i>
                                 </picture>
